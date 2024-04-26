@@ -42,8 +42,10 @@ public class PasswordRecordService {
     }
 
     public void retrieveRecords(Scanner scanner,boolean isAuthenticated,Vault vault){
-        if(!isAuthenticated)
-        System.out.println("Vault is not authenticated. Please authenticate first");
+        if(!isAuthenticated) {
+            System.out.println("Vault is not authenticated. Please authenticate first");
+            return;
+        }
 
         System.out.println("Enter service name");
         String serviceName =  scanner.nextLine();

@@ -43,17 +43,6 @@ public class VaultService {
         String password= scanner.nextLine();
         Vault vault= vaultRepository.getByName(vaultName);
         var result= BCrypt.verifyer(BCrypt.Version.VERSION_2Y).verify(password.toCharArray(),vault.getMasterPassword().getBytes());
-          /*
-         if(result.verified) {
-             System.out.println("Login Successfull");
-             return vault;
-         }
-         else {
-             System.out.println("Login not Successfull");
-             return null;
-         }
-
-           */
         return vault;
 
 
